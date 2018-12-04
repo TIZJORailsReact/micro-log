@@ -3,7 +3,6 @@ class User < ApplicationRecord
   has_secure_password
   
   validates_length_of       :password, minimum: 4, allow_nil: true, allow_blank: false
-  validates_confirmation_of :password, allow_nil: true, allow_blank: false
 
   before_validation { 
     (self.email = self.email.to_s.downcase) && (self.name = self.name.to_s.downcase) 
